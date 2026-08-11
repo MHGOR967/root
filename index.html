@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة بوت g5wbot للحقن والتحكم المتقدم | قريباً</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkpurple: {
+                            900: '#0a0414',
+                            800: '#130722',
+                            700: '#1f0d38',
+                            600: '#32145c',
+                            500: '#4c1d95',
+                        },
+                        neonpurple: {
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0a0414;
+            color: #f3e8ff;
+            overflow-x: hidden;
+        }
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(192, 132, 252, 0.7);
+        }
+        .glass-panel {
+            background: rgba(19, 7, 34, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0414;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4c1d95;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9333ea;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.06); }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-darkpurple-900 min-h-screen flex flex-col justify-between relative selection:bg-purple-600 selection:text-white">
+
+    <!-- Background Ambient Glows -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-800/15 rounded-full blur-[120px] pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" style="animation-delay: 2.5s;"></div>
+
+    <!-- Top Navigation Bar -->
+    <header class="w-full border-b border-purple-900/40 backdrop-blur-md sticky top-0 z-50 bg-darkpurple-900/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-800 to-neonpurple-400 flex items-center justify-center glow-effect">
+                    <i class="fa-solid fa-robot text-white text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-wider text-white glow-text">بوت g5wbot</span>
+                    <span class="block text-[10px] text-purple-400 tracking-widest uppercase font-semibold">منصة الحقن والتحكم المتقدم</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                <a href="#features" class="text-sm font-semibold text-purple-300 hover:text-white transition">مميزات النظام</a>
+                <a href="#simulator" class="text-sm font-semibold text-purple-300 hover:text-white transition">مخصص الروات (RAT)</a>
+                <a href="#countdown" class="text-sm font-semibold text-purple-300 hover:text-white transition">موعد الإصدار</a>
+            </div>
+            <div>
+                <span class="px-4 py-2 rounded-full text-xs font-bold bg-purple-950 border border-purple-500/40 text-purple-300 glow-effect">
+                    <i class="fa-solid fa-shield-halved text-neonpurple-400 ml-1"></i> قريبًا حصرياً
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-950/80 border border-purple-500/30 text-neonpurple-400 text-xs font-bold mb-6">
+                <i class="fa-solid fa-microchip"></i> نظام محاكاة تلغيم التطبيقات والتحكم عبر بوت g5wbot
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+                أقوى منصة حقن وتلغيم <span class="bg-gradient-to-r from-purple-400 via-neonpurple-400 to-pink-500 bg-clip-text text-transparent glow-text">عالمياً</span>
+            </h1>
+            <p class="text-lg text-purple-200/80 leading-relaxed">
+                اكتشف القدرات القادمة في <span class="text-white font-bold">بوت g5wbot</span> لتخصيص التطبيقات، دمج الحزم الذكية، واختيار وظائف التحكم الشاملة بسلاسة وأمان تام.
+            </p>
+        </div>
+
+        <!-- Interactive Teaser Simulator Section -->
+        <div id="simulator" class="glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative border border-purple-500/30 mb-20">
+            <div class="absolute -top-3 right-8 bg-purple-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                محاكي الإعدادات والروات (قريباً)
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Step 1: App Type Selection -->
+                <div class="space-y-4">
+                    <label class="block text-sm font-bold text-purple-300">
+                        <span class="bg-purple-800 text-white w-6 h-6 rounded-full inline-flex items-center justify-center text-xs ml-2">1</span>
+                        حدد نوع التطبيق المستهدف:
+                    </label>
+                    <div class="space-y-3">
+                        <div onclick="selectAppType('android')" id="card-android" class="app-type-card cursor-pointer p-4 rounded-xl border border-neonpurple-400 bg-purple-900/40 hover:bg-purple-900/50 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fa-brands fa-android text-2xl text-green-400 group-hover:scale-110 transition"></i>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">تطبيق أندرويد (APK)</h4>
+                                    <p class="text-xs text-purple-300">حقن ملفات DEX و Smali</p>
+                                </div>
+                            </div>
+                            <input type="radio" name="app_type" id="radio-android" checked class="accent-purple-500 pointer-events-none">
+                        </div>
+
+                        <div onclick="selectAppType('ios')" id="card-ios" class="app-type-card cursor-pointer p-4 rounded-xl border border-purple-500/30 bg-darkpurple-800/60 hover:bg-purple-900/50 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fa-brands fa-apple text-2xl text-gray-200 group-hover:scale-110 transition"></i>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">تطبيق آيفون (IPA)</h4>
+                                    <p class="text-xs text-purple-300">حقن حزم Mach-O والإطارات</p>
+                                </div>
+                            </div>
+                            <input type="radio" name="app_type" id="radio-ios" class="accent-purple-500 pointer-events-none">
+                        </div>
+
+                        <div onclick="selectAppType('windows')" id="card-windows" class="app-type-card cursor-pointer p-4 rounded-xl border border-purple-500/30 bg-darkpurple-800/60 hover:bg-purple-900/50 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fa-brands fa-windows text-2xl text-blue-400 group-hover:scale-110 transition"></i>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">تطبيق ويندوز (EXE)</h4>
+                                    <p class="text-xs text-purple-300">حقن الذاكرة والعمليات</p>
+                                </div>
+                            </div>
+                            <input type="radio" name="app_type" id="radio-windows" class="accent-purple-500 pointer-events-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: RAT Control & Payload Options -->
+                <div class="space-y-4">
+                    <label class="block text-sm font-bold text-purple-300">
+                        <span class="bg-purple-800 text-white w-6 h-6 rounded-full inline-flex items-center justify-center text-xs ml-2">2</span>
+                        حدد وظائف الروات (RAT Control):
+                    </label>
+                    <div class="space-y-3">
+                        <div onclick="toggleRatOption('rat-1')" id="card-rat-1" class="rat-card cursor-pointer p-3 rounded-xl border border-neonpurple-400 bg-purple-900/40 hover:bg-purple-900/60 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fa-solid fa-images text-xl text-pink-400"></i>
+                                <div>
+                                    <h4 class="font-bold text-xs text-white">سحب واستعراض الصور</h4>
+                                    <p class="text-[10px] text-purple-300">الوصول لملفات المعرض والملفات الشخصية</p>
+                                </div>
+                            </div>
+                            <input type="checkbox" id="check-rat-1" checked class="accent-purple-500 rounded pointer-events-none">
+                        </div>
+
+                        <div onclick="toggleRatOption('rat-2')" id="card-rat-2" class="rat-card cursor-pointer p-3 rounded-xl border border-purple-500/30 bg-darkpurple-800/60 hover:bg-purple-900/50 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fa-solid fa-camera text-xl text-purple-400"></i>
+                                <div>
+                                    <h4 class="font-bold text-xs text-white">التحكم بالكاميرا (التقاط فوري)</h4>
+                                    <p class="text-[10px] text-purple-300">تشغيل الكاميرا الأمامية والخلفية خفياً</p>
+                                </div>
+                            </div>
+                            <input type="checkbox" id="check-rat-2" class="accent-purple-500 rounded pointer-events-none">
+                        </div>
+
+                        <div onclick="toggleRatOption('rat-3')" id="card-rat-3" class="rat-card cursor-pointer p-3 rounded-xl border border-purple-500/30 bg-darkpurple-800/60 hover:bg-purple-900/50 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fa-solid fa-microphone text-xl text-emerald-400"></i>
+                                <div>
+                                    <h4 class="font-bold text-xs text-white">تسجيل الميكروفون مباشر</h4>
+                                    <p class="text-[10px] text-purple-300">الاستماع للأصوات المحيطة بجودة عالية</p>
+                                </div>
+                            </div>
+                            <input type="checkbox" id="check-rat-3" class="accent-purple-500 rounded pointer-events-none">
+                        </div>
+
+                        <div onclick="toggleRatOption('rat-4')" id="card-rat-4" class="rat-card cursor-pointer p-3 rounded-xl border border-purple-500/30 bg-darkpurple-800/60 hover:bg-purple-900/50 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fa-solid fa-mobile-screen-button text-xl text-blue-400"></i>
+                                <div>
+                                    <h4 class="font-bold text-xs text-white">التحكم الكامل بالجهاز</h4>
+                                    <p class="text-[10px] text-purple-300">جهات الاتصال، السجلات، والموقع الجغرافي</p>
+                                </div>
+                            </div>
+                            <input type="checkbox" id="check-rat-4" class="accent-purple-500 rounded pointer-events-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Execution & Teaser Status -->
+                <div class="space-y-4 flex flex-col justify-between">
+                    <div>
+                        <label class="block text-sm font-bold text-purple-300 mb-3">
+                            <span class="bg-purple-800 text-white w-6 h-6 rounded-full inline-flex items-center justify-center text-xs ml-2">3</span>
+                            حالة النظام وإعداد المعالجة:
+                        </label>
+                        <div class="p-4 rounded-xl bg-darkpurple-900/90 border border-purple-500/30 space-y-3">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-purple-400">حالة البوت:</span>
+                                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle text-[8px] ml-1"></i> متصل وجاهز</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-purple-400">تشفير البايلود:</span>
+                                <span class="text-purple-200 font-bold">AES-256 متطور</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-purple-400">المنصة:</span>
+                                <span class="text-neonpurple-400 font-bold">بوت g5wbot</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button onclick="triggerTeaserAction()" class="w-full py-4 rounded-xl bg-gradient-to-r from-purple-700 via-neonpurple-500 to-purple-600 hover:opacity-90 font-bold text-white shadow-lg glow-effect transition flex items-center justify-center space-x-2 space-x-reverse cursor-pointer">
+                            <i class="fa-solid fa-rocket"></i>
+                            <span>توليد المحاكاة التجريبية</span>
+                        </button>
+                        <p class="text-center text-[11px] text-purple-400/70 mt-2">* واجهة إعلانية تشويقية متطورة تظهر "قريباً".</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Countdown Section -->
+        <div id="countdown" class="text-center mb-20">
+            <h3 class="text-2xl font-bold text-white mb-6">الوقت المتبقي لإطلاق الإصدار الرسمي لبوت g5wbot</h3>
+            <div class="flex justify-center gap-4 sm:gap-6">
+                <div class="glass-panel p-4 rounded-2xl w-20 sm:w-24 border border-purple-500/30">
+                    <span id="days" class="text-2xl sm:text-4xl font-black text-neonpurple-400 block">30</span>
+                    <span class="text-xs text-purple-300">يوم</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl w-20 sm:w-24 border border-purple-500/30">
+                    <span id="hours" class="text-2xl sm:text-4xl font-black text-neonpurple-400 block">08</span>
+                    <span class="text-xs text-purple-300">ساعة</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl w-20 sm:w-24 border border-purple-500/30">
+                    <span id="minutes" class="text-2xl sm:text-4xl font-black text-neonpurple-400 block">45</span>
+                    <span class="text-xs text-purple-300">دقيقة</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl w-20 sm:w-24 border border-purple-500/30">
+                    <span id="seconds" class="text-2xl sm:text-4xl font-black text-neonpurple-400 block">20</span>
+                    <span class="text-xs text-purple-300">ثانية</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div id="features" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 rounded-xl bg-purple-900/60 flex items-center justify-center text-neonpurple-400 mb-4 text-xl glow-effect">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-2">أوامر بوت فائقة السرعة</h4>
+                <p class="text-sm text-purple-300/80">إدارة الجلسات والاتصالات بشكل فوري عبر البوت مع دعم كامل لتنفيذ أوامر متعددة.</p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 rounded-xl bg-purple-900/60 flex items-center justify-center text-neonpurple-400 mb-4 text-xl glow-effect">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-2">تصميم بنفسجي ملكي</h4>
+                <p class="text-sm text-purple-300/80">تنسيق لوني فريد وساحر يليق بمستخدمي بوت g5wbot وبأعلى معايير الأناقة.</p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 rounded-xl bg-purple-900/60 flex items-center justify-center text-neonpurple-400 mb-4 text-xl glow-effect">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-2">واجهة تشويقية آمنة</h4>
+                <p class="text-sm text-purple-300/80">نظام وهمي وعرض تسويقي بحت مخصص حصرياً للتشويق لقادم الإضافات.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal Alert Box -->
+    <div id="customModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden">
+        <div class="glass-panel p-8 rounded-3xl max-w-md w-full mx-4 border border-purple-500/50 text-center relative shadow-2xl">
+            <div class="w-16 h-16 bg-purple-600/30 rounded-full flex items-center justify-center mx-auto mb-4 text-neonpurple-400 text-2xl glow-effect">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">الإضافة قادمة قريباً في بوت g5wbot!</h3>
+            <p id="modalMessage" class="text-sm text-purple-200 mb-6">شكراً لتجربتك المحاكي يا فخم. وظائف التحكم والروات ستتوفر قريباً عبر البوت.</p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold transition shadow-lg">حسناً، فهمت</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-purple-900/50 py-6 text-center text-xs text-purple-400/70 bg-darkpurple-900">
+        <p>جميع الحقوق محفوظة © 2026 - <span class="text-white font-bold">بوت g5wbot</span> | تم التطوير بفخامة وتميز.</p>
+    </footer>
+
+    <!-- JavaScript Control Logic -->
+    <script>
+        function selectAppType(type) {
+            const types = ['android', 'ios', 'windows'];
+            types.forEach(t => {
+                const card = document.getElementById('card-' + t);
+                const radio = document.getElementById('radio-' + t);
+                if (t === type) {
+                    card.classList.add('border-neonpurple-400', 'bg-purple-900/40');
+                    card.classList.remove('border-purple-500/30', 'bg-darkpurple-800/60');
+                    radio.checked = true;
+                } else {
+                    card.classList.remove('border-neonpurple-400', 'bg-purple-900/40');
+                    card.classList.add('border-purple-500/30', 'bg-darkpurple-800/60');
+                    radio.checked = false;
+                }
+            });
+        }
+
+        function toggleRatOption(id) {
+            const card = document.getElementById('card-' + id);
+            const checkbox = document.getElementById('check-' + id);
+            checkbox.checked = !checkbox.checked;
+            
+            if(checkbox.checked) {
+                card.classList.add('border-neonpurple-400', 'bg-purple-900/40');
+                card.classList.remove('border-purple-500/30', 'bg-darkpurple-800/60');
+            } else {
+                card.classList.remove('border-neonpurple-400', 'bg-purple-900/40');
+                card.classList.add('border-purple-500/30', 'bg-darkpurple-800/60');
+            }
+        }
+
+        function triggerTeaserAction() {
+            const modal = document.getElementById('customModal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('customModal');
+            modal.classList.add('hidden');
+        }
+
+        function updateCountdown() {
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            if (!daysEl) return;
+
+            let days = parseInt(daysEl.innerText);
+            let hours = parseInt(hoursEl.innerText);
+            let minutes = parseInt(minutesEl.innerText);
+            let seconds = parseInt(secondsEl.innerText);
+
+            seconds--;
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    if (hours < 0) {
+                        hours = 23;
+                        days--;
+                    }
+                }
+            }
+
+            daysEl.innerText = String(days).padStart(2, '0');
+            hoursEl.innerText = String(hours).padStart(2, '0');
+            minutesEl.innerText = String(minutes).padStart(2, '0');
+            secondsEl.innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
+
