@@ -322,7 +322,7 @@
 
     <!-- Footer -->
     <footer class="w-full border-t border-purple-900/50 py-6 text-center text-xs text-purple-400/70 bg-darkpurple-900">
-        <p>جميع الحقوق محفوظة © 2026 - <span class="text-white font-bold">بوت g5wbot</span> | تم التطوير بفخامة وتميز.</p>
+        <p>جميع الحقوق محفوظة © 2026 - <span class="text-white font-bold">مطور وهم </span> | تم التطوير بفخامة وتميز.</p>
     </footer>
 
     <!-- JavaScript Control Logic -->
@@ -391,6 +391,12 @@
                     if (hours < 0) {
                         hours = 23;
                         days--;
+                        if (days < 0) {
+                            days = 0;
+                            hours = 0;
+                            minutes = 0;
+                            seconds = 0;
+                        }
                     }
                 }
             }
